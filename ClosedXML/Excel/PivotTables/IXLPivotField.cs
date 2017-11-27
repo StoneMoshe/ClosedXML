@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 namespace ClosedXML.Excel
 {
+    public enum XLSortType
+    {
+        Manual = 0,
+        Ascending = 1,
+        Descending = 2
+    }
     public enum XLSubtotalFunction
     {
         Automatic,
@@ -22,6 +28,8 @@ namespace ClosedXML.Excel
     public enum XLPivotLayout { Outline, Tabular, Compact }
     public interface IXLPivotField
     {
+        XLSortType SortType { get; set; }
+
         String SourceName { get; }
         String CustomName { get; set; }
 

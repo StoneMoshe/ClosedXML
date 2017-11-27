@@ -14,6 +14,9 @@ namespace ClosedXML.Excel
             SelectedValues = new List<Object>();
         }
 
+        public XLSortType SortType { get; set; }
+        public IXLPivotField SetSortType(XLSortType value) { SortType = value; return this; }
+
         public String SourceName { get; private set; }
         public String CustomName { get; set; }
 

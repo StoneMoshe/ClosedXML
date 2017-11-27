@@ -2316,11 +2316,13 @@ namespace ClosedXML.Excel
                 {
                     labelOrFilterField = pt.RowLabels.Get(xlpf.SourceName);
                     pf.Axis = PivotTableAxisValues.AxisRow;
+                    pf.SortType = (FieldSortValues)Enum.Parse(typeof(FieldSortValues), labelOrFilterField.SortType.ToString());
                 }
                 else if (pt.ColumnLabels.Contains(xlpf.SourceName))
                 {
                     labelOrFilterField = pt.ColumnLabels.Get(xlpf.SourceName);
                     pf.Axis = PivotTableAxisValues.AxisColumn;
+                    pf.SortType = (FieldSortValues)Enum.Parse(typeof(FieldSortValues), labelOrFilterField.SortType.ToString());
                 }
                 else if (pt.ReportFilters.Contains(xlpf.SourceName))
                 {
